@@ -1,13 +1,18 @@
 import os
 import joblib
 
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-
-MODEL_PATH = os.path.join(
-    BASE_DIR,
-    "models",
-    "pcos_xgboost.pkl"
+BASE_DIR = os.path.dirname(
+    os.path.dirname(
+        os.path.dirname(
+            os.path.dirname(__file__)
+        )
+    )
 )
 
-model = joblib.load(MODEL_PATH)
+full_model = joblib.load(
+    os.path.join(BASE_DIR, "models", "pcos_xgboost.pkl")
+)
+
+lite_model = joblib.load(
+    os.path.join(BASE_DIR, "models", "pcos_xgboost_lite.pkl")
+)
