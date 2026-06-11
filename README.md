@@ -1,251 +1,291 @@
-# FemAI 🌸
+# FemAI
 
-An AI-powered female health assessment platform focused on early risk detection, personalized health insights, and intelligent clinical decision support.
+AI-Powered Women's Health Risk Assessment Platform
 
-## Vision
+## Overview
 
-FemAI aims to leverage Artificial Intelligence and Machine Learning to assist in the early assessment of female health conditions using clinical, physiological, imaging, and lifestyle data.
+FemAI is a machine learning-driven healthcare platform focused on early screening and risk assessment for women's health conditions.
 
-The long-term goal is to build a multimodal healthcare platform capable of providing non-invasive, explainable, and personalized risk assessment for various women's health conditions.
+The current MVP provides PCOS (Polycystic Ovary Syndrome) risk prediction through a microservices-based architecture combining machine learning, FastAPI, Node.js, and Next.js.
 
----
-
-## Current Module: PCOS Risk Assessment
-
-The first module of FemAI focuses on the early prediction of Polycystic Ovary Syndrome (PCOS) using clinical and hormonal data.
-
-PCOS is one of the most common endocrine disorders affecting women and is often underdiagnosed due to the complexity of symptoms and delayed medical evaluation.
-
-This module aims to develop a machine learning system that can identify patterns associated with PCOS and assist in risk assessment.
+The platform offers both rapid screening and comprehensive clinical assessment workflows, enabling flexible usage in different healthcare scenarios.
 
 ---
 
-## Problem Statement
-
-Can machine learning models accurately predict the risk of PCOS using patient clinical records, hormonal indicators, lifestyle factors, and physiological measurements?
-
----
-
-## Dataset
-
-Current dataset contains:
-
-- 541 patient records
-- 45 clinical features
-
-### Feature Categories
-
-#### Demographic Information
-- Age
-- Weight
-- Height
-- BMI
-- Blood Group
-
-#### Vital Parameters
-- Pulse Rate
-- Respiratory Rate
-- Hemoglobin
-
-#### Menstrual Health
-- Cycle Regularity
-- Cycle Length
-- Marriage Status
-- Pregnancy Status
-- Number of Abortions
-
-#### Hormonal Indicators
-- FSH
-- LH
-- AMH
-- TSH
-- Prolactin
-- Progesterone
-- Beta-HCG
-- Vitamin D
-
-#### Body Measurements
-- Waist
-- Hip
-- Waist-Hip Ratio
-
-#### Clinical Symptoms
-- Weight Gain
-- Hair Growth
-- Hair Loss
-- Pimples
-- Skin Darkening
-
-#### Lifestyle Factors
-- Fast Food Consumption
-- Exercise
-
-#### Follicular Measurements
-- Follicle Count (Left)
-- Follicle Count (Right)
-- Average Follicle Size
-- Endometrium Thickness
-
----
-
-## Project Roadmap
-
-### Phase 1: Exploratory Data Analysis (Current)
-- Dataset inspection
-- Missing value analysis
-- Feature understanding
-- Class distribution analysis
-- Correlation analysis
-
-### Phase 2: Data Preprocessing
-- Handle missing values
-- Feature engineering
-- Data cleaning
-- Outlier analysis
-- Dataset preparation
-
-### Phase 3: Baseline Machine Learning Models
-- Logistic Regression
-- Decision Tree
-- Random Forest
-- XGBoost
-
-### Phase 4: Model Evaluation
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- ROC-AUC
-
-### Phase 5: Explainable AI
-- SHAP
-- Feature Importance Analysis
-- Model Interpretability
-
-### Phase 6: Deployment
-- FastAPI Backend
-- Next.js Frontend
-- Interactive Risk Assessment Interface
-
----
-
-## Future FemAI Modules
+## Current Module
 
 ### PCOS Risk Assessment
-Status: In Development
 
-### Anemia Detection
-Planned
+The first FemAI module predicts PCOS risk using clinical and physiological parameters.
 
-Potential Inputs:
-- Eye Images
-- Nail Images
-- Clinical Parameters
+#### Quick Assessment
 
-### Menstrual Health Analytics
-Planned
+A lightweight prediction workflow based on 12 highly informative clinical features.
 
-Potential Features:
-- Cycle Tracking
-- Pattern Recognition
-- Risk Alerts
+Use Cases:
 
-### Hormonal Disorder Screening
-Planned
+* Initial screening
+* Health camps
+* Rapid consultations
+* Time-constrained environments
 
-Potential Conditions:
-- Thyroid Disorders
-- Hormonal Imbalances
+#### Detailed Assessment
 
-### Medical Imaging Analysis
-Planned
+A comprehensive prediction workflow based on the complete clinical feature set.
 
-Potential Models:
-- Ultrasound Analysis
-- Deep Learning-Based Detection
+Use Cases:
 
-### Multimodal Health Assessment
-Planned
-
-Combining:
-- Clinical Data
-- Imaging Data
-- Physiological Signals
-- Lifestyle Information
+* Detailed evaluation
+* Clinical review
+* Higher-confidence assessment
 
 ---
 
-## Tech Stack
-
-### Machine Learning
-- Python
-- Pandas
-- NumPy
-- Scikit-Learn
-
-### Data Visualization
-- Matplotlib
-- Seaborn
-
-### Deep Learning (Future)
-- PyTorch
-- TensorFlow
-
-### Backend
-- FastAPI
+## Features
 
 ### Frontend
-- Next.js
-- Tailwind CSS
 
-### Version Control
-- Git
-- GitHub
+* Next.js application
+* TypeScript-based architecture
+* Responsive healthcare-focused UI
+* Multi-step assessment workflows
+* Interactive prediction dashboard
+* API integration layer
+
+### Backend
+
+* Node.js API Gateway
+* Centralized request handling
+* Service abstraction layer
+* RESTful API architecture
+
+### Machine Learning Service
+
+* FastAPI microservice
+* Dedicated prediction endpoints
+* Model serving layer
+* Probability-based risk scoring
+
+### Machine Learning Pipeline
+
+* Data preprocessing
+* Feature engineering
+* Feature selection
+* Model training
+* Model evaluation
+* Model serialization and deployment
 
 ---
 
-## Repository Structure
+## System Architecture
+
+```text
+Next.js Frontend
+        |
+        v
+Node.js API Gateway
+        |
+        v
+FastAPI ML Service
+        |
+        v
+XGBoost Prediction Models
+```
+
+---
+
+## Technology Stack
+
+### Frontend
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express.js
+* Axios
+
+### Machine Learning Service
+
+* FastAPI
+* Pydantic
+* Uvicorn
+
+### Machine Learning
+
+* XGBoost
+* Scikit-Learn
+* Pandas
+* NumPy
+* Joblib
+
+---
+
+## Project Structure
 
 ```text
 FemAI/
 │
-├── backend/
-├── frontend/
-├── models/
-├── docs/
-│
+├── frontend/          # Next.js Frontend
+├── backend/           # Node.js API Gateway
+├── ml-service/        # FastAPI ML Service
+├── notebooks/         # ML Development and Experiments
+├── models/            # Trained Models
 ├── data/
 │   ├── raw/
 │   └── processed/
-│
-├── notebooks/
-│   ├── 01_eda.ipynb
-│   ├── 02_data_cleaning.ipynb
-│   ├── 03_model_training.ipynb
-│   └── 04_model_evaluation.ipynb
-│
-├── requirements.txt
-├── .gitignore
-└── README.md
+└── docs/
 ```
 
+---
 
+## API Endpoints
 
-## Research Goals
+### Quick Prediction
 
-1. Identify the most influential clinical and hormonal indicators associated with PCOS.
-2. Develop accurate machine learning models for early risk assessment.
-3. Improve interpretability through Explainable AI techniques.
-4. Create a scalable framework that can be extended to other female health conditions.
+```http
+POST /predict/quick
+```
+
+Model:
+
+* XGBoost Lite Model (12 Features)
+
+### Detailed Prediction
+
+```http
+POST /predict/detailed
+```
+
+Model:
+
+* XGBoost Full Model (41 Features)
+
+---
+
+## Local Development
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Application:
+
+```text
+http://localhost:3000
+```
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+Application:
+
+```text
+http://localhost:5000
+```
+
+### ML Service
+
+```bash
+cd ml-service
+
+pip install -r requirements.txt
+
+uvicorn main:app --reload
+```
+
+Application:
+
+```text
+http://localhost:8000
+```
+
+Swagger Documentation:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
+## Model Information
+
+| Model        | Features | Purpose                  |
+| ------------ | -------- | ------------------------ |
+| XGBoost Lite | 12       | Rapid Screening          |
+| XGBoost Full | 41       | Comprehensive Assessment |
+
+---
+
+## Future Roadmap
+
+### Anemia Detection
+
+Potential Inputs:
+
+* Eye Images
+* Nail Images
+* Clinical Parameters
+
+### Menstrual Health Analytics
+
+Potential Features:
+
+* Cycle Tracking
+* Pattern Analysis
+* Health Insights
+* Risk Alerts
+
+### Hormonal Disorder Screening
+
+Potential Areas:
+
+* Thyroid Disorders
+* Hormonal Imbalances
+* Endocrine Risk Assessment
+
+### Fertility Health Assessment
+
+Potential Features:
+
+* Fertility Indicators
+* Ovulation Analytics
+* Reproductive Health Insights
+
+### AI Health Assistant
+
+Potential Features:
+
+* Symptom Understanding
+* Personalized Guidance
+* Educational Health Support
 
 ---
 
 ## Disclaimer
 
-FemAI is a research and educational project and is not intended to replace professional medical diagnosis or treatment. Predictions generated by the system should be used only as supportive insights and must be interpreted by qualified healthcare professionals.
+This project is intended for educational, research, and technology demonstration purposes.
+
+Predictions generated by the system should not be interpreted as medical diagnoses and must not replace professional medical consultation.
+
+Healthcare decisions should always be made in consultation with qualified medical professionals.
 
 ---
 
-## Contributors
+## Author
 
-- Vaishnavi Chaudhary
+Vaishnavi Chaudhary
+
+FemAI is being developed as a scalable AI platform for women's health screening, risk assessment, and preventive healthcare analytics.
